@@ -68,7 +68,7 @@ function Library:CreateMain(text,keycode)
 	local elems = Instance.new("Frame")
 	local UIPageLayout = Instance.new("UIPageLayout")
 	local line_2 = Instance.new("Frame")
-	local tbs = Instance.new("Frame")
+	local tbs = Instance.new("ScrollingFrame")
 	local tblayout = Instance.new("UIListLayout")
 	local TextLabel = Instance.new("TextLabel")
 
@@ -143,6 +143,7 @@ function Library:CreateMain(text,keycode)
 	tbs.BorderSizePixel = 0
 	tbs.Position = UDim2.new(0.148900166, 0, 0, 0)
 	tbs.Size = UDim2.new(0, 494, 0, 34)
+        tbs.CanvasSize = UDim2.new(0,30,0,0)
 
 	tblayout.Name = "tblayout"
 	tblayout.Parent = tbs
@@ -239,7 +240,7 @@ function Library:CreateMain(text,keycode)
 		local Frame = Instance.new("Frame")
 		tabs = tabs + 1
 		local tabnum = tabs
-
+                tbs.CanvasSize = tbs.CanvasSize + UDim2.new(0,38,0,0)
 
 
 		tab.Name = "tab"
@@ -275,12 +276,12 @@ function Library:CreateMain(text,keycode)
 		tb.BackgroundColor3 = Color3.fromRGB(36, 36, 36)
 		tb.BorderSizePixel = 0
 		tb.Position = UDim2.new(0.148900166, 0, 0.0100671137, 0)
-		tb.Size = UDim2.new(0, 62, 0, 27)
+		tb.Size = UDim2.new(0, 89, 0, 27)
 		tb.AutoButtonColor = false
 		tb.Font = Enum.Font.Gotham
 		tb.Text = textt
 		tb.TextColor3 = Color3.fromRGB(63, 127, 94)
-		tb.TextSize = 15.000
+		tb.TextSize = 12.000
 
 		UICorner.CornerRadius = UDim.new(0, 3)
 		UICorner.Parent = tb
