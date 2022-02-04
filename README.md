@@ -5,7 +5,7 @@ Thank you for using my UI library, there is how to use it.
 ## Loader
 
 ```lua
-local Library = loadstring(game:HttpGetAsync('https://raw.githubusercontent.com/MirroxGame/settings/main/settings.lua'))()
+local Library = loadstring(game:HttpGetAsync('https://raw.githubusercontent.com/MirroxGame/SLF-library/main/Library%20Core'))()
 ```
 
 ## Functions
