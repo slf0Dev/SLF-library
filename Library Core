@@ -325,7 +325,7 @@ function Library:CreateMain(text,keycode)
 			button.AutoButtonColor = false
 			button.Font = Enum.Font.Gotham
 			button.Text = text
-			button.TextColor3 = Color3.fromRGB(85, 170, 127)
+			button.TextColor3 = Color3.fromRGB(255,255,255)
 			button.TextSize = 16.000
 
 			UICorner.Parent = button
@@ -387,6 +387,7 @@ function Library:CreateMain(text,keycode)
 
 			button.MouseLeave:Connect(function()
 				fade(button,0,0.3)
+                                pressed = false
 			end)
 
 			button.MouseButton1Click:Connect(callback)
@@ -416,7 +417,7 @@ function Library:CreateMain(text,keycode)
 			checkbox.ZIndex = 2
 			checkbox.Font = Enum.Font.Gotham
 			checkbox.Text = "   " .. text
-			checkbox.TextColor3 = Color3.fromRGB(85, 170, 127)
+			checkbox.TextColor3 = Color3.fromRGB(255,255,255)
 			checkbox.TextSize = 16.000
 			checkbox.TextWrapped = true
 			checkbox.TextXAlignment = Enum.TextXAlignment.Left
@@ -650,6 +651,7 @@ function Library:CreateMain(text,keycode)
 			TextLabel.Text = (suffix .. "  ".. min)
 			TextLabel.TextColor3 = Color3.fromRGB(255, 255, 255)
 			TextLabel.TextSize = 13.000
+TextLabel.TextXAlignment = Enum.TextXAlignment.Right
 
 			label.Name = "label"
 			label.Parent = Range
