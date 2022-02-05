@@ -1,40 +1,59 @@
-SLF ui library.
+# SLF UI Library
 
-Thank you for using my UI library.
+Thank you for using my UI library, there is how to use it.
 
-There is how to use it.
+## Loader
 
+```lua
+local Library = loadstring(game:HttpGetAsync('https://raw.githubusercontent.com/slf0Dev/SLF-library/main/Library%20Core'))()
+```
 
-//Main Gui//
+## Functions
 
-local main = Library:CreateMain("Name Here","Any key you want") -- it creates the main window
+### Creating Window
+____
+```lua
+local Main = Library:CreateMain("TITLE","KeyBind")
+```
 
-//
+### Adding Tab
+____
+```lua
+local Tab = Main:AddTab("TabName")
+```
 
-
-//Tabs//
-local Tab = main:AddTab("Name Here")
-//
-
-
-<<COMPONENTS>>
-//(buttons,checkboxes,textboxes,sliders)//
-
-local button = Tab:AddButton("Name Here",function()
--- your code here
+### Adding Button
+____
+```lua
+local Button = Tab:AddButton("ButtonText",function()
+  print("Clicked")
 end)
+```
 
+### Adding Toggles
+____
+```lua
+local Toggle = Tab:AddCheckbox("ToggleText",function(state)
+  if state then
+    print("Toggle On")
+  else
+    print("Toggle Off")
+  end
+end)
+```
 
-local checkbox = Tab:AddCheckbox("Name Here",function(Bool)
--- your code here
+### Adding Slider
+____
+```lua
+local Slider = Tab:AddSlider("SliderText",0,100,"SliderSuffix",function(value)  -- 0 (MinValue) | 100 (MaxValue)
+  print(value)
 end)
+```
 
-  
-local slider = Tab:AddSlider("Name Here",MinValue,MaxValue,"suffix",function(val)
--- your code here
+### Adding TextBox
+____
+```lua
+local TextBox = Tab:AddTextBox("TextBoxText",function(text)
+  print(text)
 end)
-  
-local textbox = Tab:AddTextBox("Name Here",function(OutPut)
--- your code here
-end)
-  
+```
