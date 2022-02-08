@@ -94,6 +94,19 @@ function Library:CreateMain(text,keycode)
 	main.BorderColor3 = Color3.fromRGB(85, 170, 127)
 	main.ClipsDescendants = true
 	main.Size = UDim2.new(0, 591, 0, 298)
+    main.BorderSizePixel = 0
+
+    local Rondfd = Instance.new("UICorner")
+    Rondfd.CornerRadius = UDim.new(0, 3)
+    Rondfd.Parent = main
+
+    local Strokee = Instance.new("UIStroke")
+    Strokee.Parent = main
+    Strokee.ApplyStrokeMode = "Border"
+    Strokee.Color = Color3.fromRGB(85, 170, 127)	
+    Strokee.LineJoinMode = "Round"
+    Strokee.Thickness = 2
+    Strokee.Transparency = 0
 
 	ins.Name = "ins"
 	ins.Parent = main
@@ -106,7 +119,7 @@ function Library:CreateMain(text,keycode)
 
 	line.Name = "line"
 	line.Parent = ins
-	line.BackgroundColor3 = Color3.fromRGB(30, 61, 44)
+	line.BackgroundColor3 = Color3.fromRGB(35, 120, 70)
 	line.BorderSizePixel = 0
 	line.Position = UDim2.new(0, 0, 0.114093959, 0)
 	line.Size = UDim2.new(0, 591, 0, 2)
@@ -131,7 +144,7 @@ function Library:CreateMain(text,keycode)
 
 	line_2.Name = "line"
 	line_2.Parent = ins
-	line_2.BackgroundColor3 = Color3.fromRGB(30, 61, 44)
+	line_2.BackgroundColor3 = Color3.fromRGB(35, 120, 70)
 	line_2.BorderSizePixel = 0
 	line_2.Position = UDim2.new(0.133671746, 0, 0, 0)
 	line_2.Size = UDim2.new(0, 2, 0, 36)
@@ -143,7 +156,10 @@ function Library:CreateMain(text,keycode)
 	tbs.BorderSizePixel = 0
 	tbs.Position = UDim2.new(0.148900166, 0, 0, 0)
 	tbs.Size = UDim2.new(0, 494, 0, 34)
-        tbs.CanvasSize = UDim2.new(0,30,0,0)
+    tbs.CanvasSize = UDim2.new(0,35,0,0)
+    tbs.ScrollBarThickness = 2
+    tbs.ScrollingDirection = Enum.ScrollingDirection.X
+    tbs.ScrollBarImageColor3 = Color3.fromRGB(100,100,100)
 
 	tblayout.Name = "tblayout"
 	tblayout.Parent = tbs
@@ -240,7 +256,7 @@ function Library:CreateMain(text,keycode)
 		local Frame = Instance.new("Frame")
 		tabs = tabs + 1
 		local tabnum = tabs
-                tbs.CanvasSize = tbs.CanvasSize + UDim2.new(0,38,0,0)
+                tbs.CanvasSize = tbs.CanvasSize + UDim2.new(0.1735,0,0,0)
 
 
 		tab.Name = "tab"
@@ -276,12 +292,12 @@ function Library:CreateMain(text,keycode)
 		tb.BackgroundColor3 = Color3.fromRGB(36, 36, 36)
 		tb.BorderSizePixel = 0
 		tb.Position = UDim2.new(0.148900166, 0, 0.0100671137, 0)
-		tb.Size = UDim2.new(0, 89, 0, 27)
+		tb.Size = UDim2.new(0, 100, 0, 27)
 		tb.AutoButtonColor = false
 		tb.Font = Enum.Font.Gotham
 		tb.Text = textt
 		tb.TextColor3 = Color3.fromRGB(63, 127, 94)
-		tb.TextSize = 12.000
+		tb.TextSize = 14.000
 
 		UICorner.CornerRadius = UDim.new(0, 3)
 		UICorner.Parent = tb
@@ -388,6 +404,7 @@ function Library:CreateMain(text,keycode)
 			button.MouseLeave:Connect(function()
 				fade(button,0,0.3)
                                 pressed = false
+                                time = 0.3
 			end)
 
 			button.MouseButton1Click:Connect(callback)
@@ -797,4 +814,4 @@ end
 	end
 	return inside;
 end
-return Library;
+return Library
