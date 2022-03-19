@@ -261,7 +261,7 @@ function Library:CreateMain(text,keycode)
 		local Frame = Instance.new("Frame")
 		tabs = tabs + 1
 		local tabnum = tabs
-		tbs.CanvasSize = tbs.CanvasSize + UDim2.new(0.1735,0,0,0)
+		tbs.CanvasSize = tbs.CanvasSize + UDim2.new(tb.AbsoluteSize.X,0,0,0)
 
 
 		tab.Name = "tab"
