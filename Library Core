@@ -246,7 +246,7 @@ function Library:Window(text,keycode)
         local Frame = Instance.new("Frame")
         tabs = tabs + 1
         local tabnum = tabs
-        tbs.CanvasSize = tbs.CanvasSize + UDim2.new(0.1735,0,0,0)
+        tbs.CanvasSize = tbs.CanvasSize + UDim2.new(0.3,0,0,0)
         
         
         tab.Name = "tab"
@@ -279,10 +279,10 @@ function Library:Window(text,keycode)
         
         tb.Name = "tb"
         tb.Parent = tbs
-        tb.BackgroundColor3 = Color3.fromRGB(36, 36, 36)
+        tb.BackgroundColor3 = Color3.fromRGB(30, 30, 30)
         tb.BorderSizePixel = 0
         tb.Position = UDim2.new(0.148900166, 0, 0.0100671137, 0)
-        tb.Size = UDim2.new(0, 100, 0, 27)
+        tb.Size = UDim2.new(0, 175, 0, 27)
         tb.AutoButtonColor = false
         tb.Font = Enum.Font.Gotham
         tb.Text = textt
@@ -1092,8 +1092,35 @@ function Library:Window(text,keycode)
             return insidedrp;
             
         end
+        function InsideTab:Label(text)
+		local label = Instance.new("TextLabel")
+		local UICorner = Instance.new("UICorner")
+            
+        tab.CanvasSize = tab.CanvasSize + UDim2.new(0,0,0,38)
+
+            
+        label.Name = "label"
+        label.Parent = tab
+        label.BackgroundColor3 = Color3.fromRGB(36, 36, 36)
+    	label.BorderColor3 = Color3.fromRGB(27, 42, 53)
+    	label.BorderSizePixel = 0
+    	label.ClipsDescendants = true
+    	label.Size = UDim2.new(0, 570, 0, 34)
+    	label.ZIndex = 2
+    	label.Font = Enum.Font.Gotham
+    	label.Text = text
+    	label.TextColor3 = Color3.fromRGB(255,255,255)
+    	label.TextSize = 16.000
+    				
+    	UICorner.Parent = label
+    	local refr = {}
+    	function refr:Refresh(newtext)
+    	    label.Text = newtext
+        end
+        return refr;
+end
     return InsideTab
     end
     return inside
 end
-return Library
+return Library;
