@@ -297,7 +297,7 @@ function Library:CreateMain(text,keycode)
 		tb.BackgroundColor3 = Color3.fromRGB(36, 36, 36)
 		tb.BorderSizePixel = 0
 		tb.Position = UDim2.new(0.148900166, 0, 0.0100671137, 0)
-		tb.Size = UDim2.new(0, 100, 0, 27)
+		tb.Size = UDim2.new(0, 200, 0, 27)
 		tb.AutoButtonColor = false
 		tb.Font = Enum.Font.Gotham
 		tb.Text = textt
