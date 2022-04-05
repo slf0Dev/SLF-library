@@ -47,10 +47,150 @@ end
 
 
 
+local LoaderLib = {};
+local TweenService = game:GetService("TweenService");
+
+function Library:Loader(HubText,CreditsText,CommentText)
+
+
+local Loader = Instance.new("ScreenGui")
+local Zone = Instance.new("Frame")
+local Main = Instance.new("Frame")
+local UIGradient = Instance.new("UIGradient")
+local HubName = Instance.new("TextLabel")
+local UIGradient_2 = Instance.new("UIGradient")
+local Credits = Instance.new("TextLabel")
+local UIGradient_3 = Instance.new("UIGradient")
+local welcomeLabel = Instance.new("TextLabel")
+local UIGradient_4 = Instance.new("UIGradient")
+local Backgroundimg = Instance.new("ImageLabel")
+local UICorner = Instance.new("UICorner")
+local LogoImage = Instance.new("ImageLabel")
+local UICorner_2 = Instance.new("UICorner")
 
 
 
+Loader.Name = "Loader"
+Loader.Parent = game.CoreGui
+Loader.ZIndexBehavior = Enum.ZIndexBehavior.Sibling
 
+Zone.Name = "Zone"
+Zone.Parent = Loader
+Zone.AnchorPoint = Vector2.new(0.5, 0.5)
+Zone.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+Zone.BackgroundTransparency = 1.000
+Zone.BorderSizePixel = 0
+Zone.ClipsDescendants = true
+Zone.Position = UDim2.new(0.5, 0, 0.5, 0)
+Zone.Size = UDim2.new(0, 550, 0, 350)
+
+Main.Name = "Main"
+Main.Parent = Zone
+Main.AnchorPoint = Vector2.new(0.5, 0.5)
+Main.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+Main.BorderSizePixel = 0
+Main.ClipsDescendants = true
+Main.Position = UDim2.new(0.5, 0, 0.5, 0)
+Main.Size = UDim2.new(0, 0, 0, 0)
+
+UIGradient.Color = ColorSequence.new{ColorSequenceKeypoint.new(0.00, Color3.fromRGB(170, 255, 255)), ColorSequenceKeypoint.new(1.00, Color3.fromRGB(211, 255, 198))}
+UIGradient.Parent = Main
+
+HubName.Name = "HubName"
+HubName.Parent = Main
+HubName.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+HubName.BackgroundTransparency = 1.000
+HubName.BorderSizePixel = 0
+HubName.Position = UDim2.new(0.0345454589, 0, 0.0457142964, 0)
+HubName.Size = UDim2.new(0, 183, 0, 47)
+HubName.Font = Enum.Font.Kalam
+HubName.Text = HubText
+HubName.TextColor3 = Color3.fromRGB(145, 145, 145)
+HubName.TextSize = 50.000
+HubName.TextXAlignment = Enum.TextXAlignment.Left
+
+UIGradient_2.Color = ColorSequence.new{ColorSequenceKeypoint.new(0.00, Color3.fromRGB(170, 255, 255)), ColorSequenceKeypoint.new(1.00, Color3.fromRGB(211, 255, 198))}
+UIGradient_2.Parent = HubName
+
+Credits.Name = "Credits"
+Credits.Parent = Main
+Credits.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+Credits.BackgroundTransparency = 1.000
+Credits.BorderSizePixel = 0
+Credits.Position = UDim2.new(0.0345454551, 0, 0.151428565, 0)
+Credits.Size = UDim2.new(0, 503, 0, 47)
+Credits.Font = Enum.Font.Kalam
+Credits.Text = CreditsText
+Credits.TextColor3 = Color3.fromRGB(109, 109, 109)
+Credits.TextSize = 21.000
+Credits.TextXAlignment = Enum.TextXAlignment.Left
+
+UIGradient_3.Color = ColorSequence.new{ColorSequenceKeypoint.new(0.00, Color3.fromRGB(170, 255, 255)), ColorSequenceKeypoint.new(1.00, Color3.fromRGB(211, 255, 198))}
+UIGradient_3.Parent = Credits
+
+welcomeLabel.Name = "welcomeLabel"
+welcomeLabel.Parent = Main
+welcomeLabel.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+welcomeLabel.BackgroundTransparency = 1.000
+welcomeLabel.BorderSizePixel = 0
+welcomeLabel.Position = UDim2.new(0.367272735, 0, 0.788571417, 0)
+welcomeLabel.Size = UDim2.new(0, 152, 0, 68)
+welcomeLabel.Font = Enum.Font.Kalam
+welcomeLabel.Text = CommentText
+welcomeLabel.TextColor3 = Color3.fromRGB(115, 115, 115)
+welcomeLabel.TextSize = 50.000
+
+UIGradient_4.Color = ColorSequence.new{ColorSequenceKeypoint.new(0.00, Color3.fromRGB(170, 255, 255)), ColorSequenceKeypoint.new(1.00, Color3.fromRGB(211, 255, 198))}
+UIGradient_4.Parent = welcomeLabel
+
+Backgroundimg.Name = "Backgroundimg"
+Backgroundimg.Parent = Main
+Backgroundimg.AnchorPoint = Vector2.new(0.5, 0.5)
+Backgroundimg.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+Backgroundimg.BackgroundTransparency = 1.000
+Backgroundimg.BorderSizePixel = 0
+Backgroundimg.Position = UDim2.new(0.5, 0, 0.49999997, 0)
+Backgroundimg.Size = UDim2.new(1, 0, 1, 0)
+Backgroundimg.Image = "http://www.roblox.com/asset/?id=1771082037"
+Backgroundimg.ImageTransparency = 0.870
+
+UICorner.CornerRadius = UDim.new(0, 10)
+UICorner.Parent = Backgroundimg
+
+LogoImage.Name = "LogoImage"
+LogoImage.Parent = Main
+LogoImage.AnchorPoint = Vector2.new(0.5, 0.5)
+LogoImage.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+LogoImage.BackgroundTransparency = 1.000
+LogoImage.BorderSizePixel = 0
+LogoImage.Position = UDim2.new(0.405999988, 0, 0, 35)
+LogoImage.Size = UDim2.new(0.0781818405, 0, 0.122857153, 0)
+LogoImage.Image = "http://www.roblox.com/asset/?id=9287155123"
+LogoImage.ImageColor3 = Color3.fromRGB(167, 255, 208)
+LogoImage.ScaleType = Enum.ScaleType.Fit
+
+UICorner_2.CornerRadius = UDim.new(0, 10)
+UICorner_2.Parent = Main
+
+
+-- Blur
+
+local Blur = Instance.new("BlurEffect");
+Blur.Parent = game:GetService("Lighting");
+Blur.Size = 0
+
+spawn(function()
+        repeat wait() until game:IsLoaded();
+	Main:TweenSize(UDim2.new(1,0,1,0),"Out","Quart",0.4,true,nil);
+	TweenService:Create(Blur,TweenInfo.new(.4),{Size = 24}):Play();
+	wait(2.5)
+	Main:TweenSize(UDim2.new(0,0,0,0),"In","Quart",0.4,true,nil);
+	TweenService:Create(Blur,TweenInfo.new(.4),{Size = 0}):Play();
+	wait(0.6)
+	Loader:Destroy() ; Blur:Destroy() ;
+	end)
+	return Main
+end
 
 
 local tabs = -1
