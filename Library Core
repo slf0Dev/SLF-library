@@ -2,7 +2,7 @@ local UserInputService = game:GetService("UserInputService")
 local ms = game.Players.LocalPlayer:GetMouse()
 
 local TweenService = game:GetService("TweenService")
-
+local Library = {}
 
 local function fade(Object,col,Delay)
     local ToTween = Object
@@ -195,7 +195,6 @@ end
 
 local tabs = -1
 
-local Library = {}
 
 function Library:Window(text,keycode)
     local uilib = Instance.new("ScreenGui")
